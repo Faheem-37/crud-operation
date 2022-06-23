@@ -9,7 +9,8 @@ const port = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/todo", todoRoutes);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/", todoRoutes);
 
 app.listen(port, () => {
   TodoModal();
