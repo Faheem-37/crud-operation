@@ -4,6 +4,11 @@ const bodyParser = require("body-parser");
 const TodoModal = require("./schema");
 
 todoRoutes.use(bodyParser.json());
+////server checking
+todoRoutes.route("/").get(async (req, res) => {
+  res.status(200).send("Server is Running on Full Speed");
+});
+
 ///add todos
 todoRoutes.route("/add").post(async (req, res) => {
   let todoRecord = new TodoModal(req.body);

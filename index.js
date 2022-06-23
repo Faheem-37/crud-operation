@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const Connection = require("./todo/server");
 const TodoModal = require("./todo/schema");
 const todoRoutes = require("./todo/controller");
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(bodyParser.json());
